@@ -3,7 +3,7 @@
 
 CentralityTool::CentralityTool() {
 
-    for (int i=0; i<9; i++) {
+    for (int i=0; i<cent_conf::nCentrality; i++) {
         centSplitEdge[i] = 0;
         centSplitEdgeM[i] = 0;
     }
@@ -24,7 +24,7 @@ void CentralityTool::ReadParams() {
 
 int CentralityTool::GetCentrality(int mult, bool withM) {
     if (withM) {
-        for (int i=0; i<5; i++) {
+        for (int i=0; i<cent_conf::nCentrality; i++) {
             if (mult > centSplitEdgeM[i]) {
                 return i;
             }
